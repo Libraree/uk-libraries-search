@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Set Up Proxy
+    - name: Set up proxy
       env:
         SSH_HOST: ${{ secrets.SSH_HOST}}
         SSH_USER: ${{ secrets.SSH_USER }}
@@ -17,9 +17,9 @@ jobs:
       run: |
         echo -n "${SSH_KEY}" > ssh_key
         sudo chmod 600 ssh_key
-        ssh -o StrictHostKeyChecking=no -t -t -i ./ssh_key "${SHH_USER}@${SSH_HOST}" -L "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" &
+        ssh -o StrictHostKeyChecking=no -tt -i ./ssh_key "${SHH_USER}@${SSH_HOST}" -L "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" &
     - uses: actions/checkout@v3
-    - name: Run Tests
+    - name: Run tests
       env:
         # Some providers - e.g. Luci - require that the request originates from
         # the United Kingdom, however GitHub's servers are in the United States.
@@ -28,7 +28,7 @@ jobs:
         NODE_TLS_REJECT_UNAUTHORIZED: '0'
       run: |
         npm install
-        nom run integration-ci
+        npm run integration-ci
     - name: Clean-up
       run: rm -rf ssh_key
       if: always()
