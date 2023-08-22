@@ -18,9 +18,11 @@ jobs:
       run: |
         mkdir ~/.ssh
         ssh-keyscan -H -p ${SSH_PORT} ${SSH_HOST} >> ~/.ssh/known_hosts
+        echo "ServerAliveInterval 15\nServerAliveCountMax 120" >> ~/.ssh/ssh_config
+        chmod 600 ~/.ssh/ssh_config
         eval `ssh-agent -s`
         ssh-add - <<< "${SSH_KEY}"
-        ssh -fN -L "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" "${SSH_USER}@${SSH_HOST}" -p ${SSH_PORT} &
+        ssh -fN -L "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" "${SSH_USER}@${SSH_HOST}" -p ${SSH_PORT}
         echo "Connected!"
     - uses: actions/checkout@v3
     - name: Run tests
@@ -29,7 +31,6 @@ jobs:
         # the United Kingdom, however GitHub's servers are in the United States.
         # Running the requests via a proxy based in the UK circumnavigates this.
         LUCI_PROXY: ${{ secrets.PROXY_URL }}
-        NODE_TLS_REJECT_UNAUTHORIZED: '0'
       run: |
         npm install
         npm run integration-ci
