@@ -1,0 +1,9 @@
+export { IClient } from './IClient';
+export { Client } from './Client';
+export { IHttpClient } from './net/IHttpClient';
+export { HttpResponse } from './net/HttpResponse';
+export { HttpError } from './net/HttpError';
+export { ServiceResult } from './services/models/ServiceResult';
+export { LibraryResult } from './search/models/LibraryResult';
+export { SearchResult } from './search/models/SearchResult';
+export { Availability } from './search/models/Availability';

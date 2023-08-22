@@ -1,0 +1,10 @@
+src/
+dist/**/*.test.*
+**/coverage/
+**/integration/
+**/tests/
+/*.json
+/*.cjs
+/*.config.js
+.[!.]*
+*.tgz

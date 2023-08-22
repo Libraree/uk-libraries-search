@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Project-Specific
+src/temp.js
+tests/Manual.test.ts
+**/coverage
+coverage
+dist
+*.tgz

@@ -1,0 +1,15 @@
+const path = require('path');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+
+module.exports = {
+  mode: 'development',
+  entry: path.resolve(__dirname) + '/index.ts',
+  resolve: {
+    mainFields: ['browser', 'module', 'main'],
+    aliasFields: ['browser']
+  },
+  plugins: [
+    new NodePolyfillPlugin()
+  ],
+  target: 'node'
+}

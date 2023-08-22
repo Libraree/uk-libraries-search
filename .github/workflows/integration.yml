@@ -1,0 +1,34 @@
+name: Integration Tests
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 13 * * 5" # Every Friday at 13:00 UTC
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set Up Proxy
+      env:
+        SSH_HOST: ${{ secrets.SSH_HOST}}
+        SSH_USER: ${{ secrets.SSH_USER }}
+        SSH_KEY: ${{ secrets.SSH_KEY }}
+        PROXY_IP: ${{ secrets.PROXY_IP }}
+        PROXY_PORT: ${{ secrets.PROXY_PORT }}
+      run: |
+        echo -n "${SSH_KEY}" > ssh_key
+        sudo chmod 600 ssh_key
+        ssh -o StrictHostKeyChecking=no -t -t -i ./ssh_key "${SHH_USER}@${SSH_HOST}" -L "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" &
+    - uses: actions/checkout@v3
+    - name: Run Tests
+      env:
+        # Some providers - e.g. Luci - require that the request originates from
+        # the United Kingdom, however GitHub's servers are in the United States.
+        # Running the requests via a proxy based in the UK circumnavigates this.
+        LUCI_PROXY: ${{ secrets.PROXY_URL }}
+        NODE_TLS_REJECT_UNAUTHORIZED: '0'
+      run: |
+        npm install
+        nom run integration-ci
+    - name: Clean-up
+      run: rm -rf ssh_key
+      if: always()

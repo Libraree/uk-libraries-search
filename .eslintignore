@@ -1,0 +1,8 @@
+.eslintrc.js
+babel.config.js
+jest.config.cjs
+coverage/
+integration/integrations.config.cjs
+src/temp.js
+dist/
+*.cjs
