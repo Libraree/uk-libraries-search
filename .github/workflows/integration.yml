@@ -10,6 +10,7 @@ jobs:
     - name: Set up proxy
       env:
         SSH_HOST: ${{ secrets.SSH_HOST}}
+        SSH_PORT: ${{ secrets.SSH_PORT }}
         SSH_USER: ${{ secrets.SSH_USER }}
         SSH_KEY: ${{ secrets.SSH_KEY }}
         PROXY_IP: ${{ secrets.PROXY_IP }}
@@ -17,7 +18,8 @@ jobs:
       run: |
         echo -n "${SSH_KEY}" > ./ssh_key
         sudo chmod 600 ./ssh_key
-        ssh -o StrictHostKeyChecking=no -fN -i ./ssh_key "${SHH_USER}@${SSH_HOST}" -L "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" &
+        echo "$(ssh-keyscan -p ${SSH_PORT} ${SSH_HOST})" >> ~/.ssh/known_hosts
+        ssh -fNL "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" -i ./ssh_key "${SHH_USER}@${SSH_HOST}" -p ${SSH_PORT} &
     - uses: actions/checkout@v3
     - name: Run tests
       env:
