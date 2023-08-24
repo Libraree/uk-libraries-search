@@ -7,6 +7,8 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
+    - name: Check out code
+      uses: actions/checkout@v3
     - name: Set up proxy
       env:
         SSH_HOST: ${{ secrets.SSH_HOST}}
@@ -24,7 +26,6 @@ jobs:
         ssh-add - <<< "${SSH_KEY}"
         ssh -fN -L "${PROXY_PORT}:${PROXY_IP}:${PROXY_PORT}" "${SSH_USER}@${SSH_HOST}" -p ${SSH_PORT}
         echo "Connected!"
-    - uses: actions/checkout@v3
     - name: Run tests
       env:
         # Some providers - e.g. Luci - require that the request originates from
