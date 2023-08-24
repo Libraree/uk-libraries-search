@@ -9,6 +9,9 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v3
+    - name: Install dependencies
+      run: |
+        npm install
     - name: Set up proxy
       env:
         SSH_HOST: ${{ secrets.SSH_HOST}}
@@ -33,5 +36,4 @@ jobs:
         # Running the requests via a proxy based in the UK circumnavigates this.
         LUCI_PROXY: ${{ secrets.PROXY_URL }}
       run: |
-        npm install
         npm run integration-ci
