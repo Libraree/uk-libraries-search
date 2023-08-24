@@ -1,23 +1,9 @@
 import { expect, test } from '@jest/globals';
 import * as services from '../src/services/services.json';
 import * as data from './tests.json';
-import { Service } from '../src/services/models/Service';
-import { IImplementation } from '../src/search/implementations/IImplementation';
-import { BlackpoolImplementation } from '../src/search/implementations/BlackpoolImplementation';
-import { SpydusImplementation } from '../src/search/implementations/SpydusImplementation';
-import { ArenaV6Implementation } from '../src/search/implementations/ArenaV6Implementation';
-import { ArenaV7Implementation } from '../src/search/implementations/ArenaV7Implementation';
-import { DurhamImplementation } from '../src/search/implementations/DurhamImplementation';
-import { EnterpriseImplementation } from '../src/search/implementations/EnterpriseImplementation';
-import { IbistroImplementation } from '../src/search/implementations/IbistroImplementation';
-import { IguanaImplementation } from '../src/search/implementations/IguanaImplementation';
-import { KohaV20Implementation } from '../src/search/implementations/KohaV20Implementation';
-import { KohaV22Implementation } from '../src/search/implementations/KohaV22Implementation';
-import { LuciImplementation } from '../src/search/implementations/LuciImplementation';
-import { PrismImplementation } from '../src/search/implementations/PrismImplementation';
-import { WebpacImplementation } from '../src/search/implementations/WebpacImplementation';
 import * as _ from 'underscore';
 import { ProxyCookieHttpClient } from '../tests/ProxyCookieHttpClient';
+import { Client } from '../src';
 
 /*
 The sequence of ISBNs is generally as follows:
@@ -43,26 +29,40 @@ const booksIgnoreList = [
     'Bexley', // LFR_SESSION_STATE cookie - JS-generated
 ];
 
-const getServices = (type: string, ignoreList: string[]): (string | Service)[][] => {
+const allTypes: string[] = [
+    'arenaV6',
+    'arenaV7',
+    'blackpool',
+    'durham',
+    'enterprise',
+    'ibistro',
+    'iguana',
+    'kohaV20',
+    'kohaV22',
+    'luci',
+    'prism',
+    'spydus',
+    'webpac'
+];
+
+const getServices = (type: string, ignoreList: string[]): string[][] => {
     return _.chain(services)
         .filter(x => x[type] !== undefined && !ignoreList.includes(x.name))
-        .map(x => [ x.name, x.code, x as Service ])
+        .map(x => [ x.name, x.code ])
         .value();
 };
 
-const testLibraries = async (implementation: IImplementation, name: string, code: string, srv: Service) => {
-    const service = Object.assign(new Service(), srv);
-    const result = await implementation.getLibraries(service);
+const testLibraries = async (client: Client, name: string, code: string) => {
+    const result = await client.listLibraries(code);
     
     expect(result.code).toEqual(code);
     expect(result.name).toEqual(name);
     expect(result.branches.length).toBeGreaterThan(0);
 };
 
-const testBooks = async(implementation: IImplementation, name: string, code: string, srv: Service) => {
-    const service = Object.assign(new Service(), srv);
+const testBooks = async(client: Client, name: string, code: string) => {
     const isbns = _.find(data, x => x.name == name)?.isbns as string[];
-    const results = await implementation.getBooks(service, isbns);
+    const results = await client.searchBooks(code, isbns);
 
     expect(results).not.toHaveLength(0);
 
@@ -77,236 +77,47 @@ const testBooks = async(implementation: IImplementation, name: string, code: str
     expect(result!.id).toBeTruthy();
 };
 
-describe('Arena V6', () => {
-    const type = 'arenaV6';
-    const client = new ProxyCookieHttpClient(process.env.ARENAV6_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new ArenaV6Implementation(client);
+const getProxy = (type: string): string => {
+    return process.env[`${type.toUpperCase()}_PROXY`] ?? process.env.DEFAULT_PROXY;
+};
+
+/*
+Tests are ordered so that proxied tests are run first. This is because an unused
+SSH port forwarding connection will get disconnected if we prioritise direct tests.
+*/
+
+// Proxy
+describe.each(_.chain(allTypes).filter(t => getProxy(t)).map(t => [ t ]).value())('Proxy: %p', (type: string) => {
+    const httpClient = new ProxyCookieHttpClient(getProxy(type));
+    const client = new Client(httpClient);
     
     describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
+        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string) => {
+            await testLibraries(client, name, code);
         }, 600000);
     });
 
     describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
+        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string) => {
+            await testBooks(client, name, code);
         }, 600000);
     });
 });
 
-describe('Arena V7', () => {
-    const type = 'arenaV7';
-    const client = new ProxyCookieHttpClient(process.env.ARENAV7_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new ArenaV7Implementation(client);
+// Direct
+describe.each(_.chain(allTypes).filter(t => !getProxy(t)).map(t => [ t ]).value())('Direct: %p', (type: string) => {
+    const httpClient = new ProxyCookieHttpClient();
+    const client = new Client(httpClient);
     
     describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
+        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string) => {
+            await testLibraries(client, name, code);
         }, 600000);
     });
 
     describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Blackpool', () => {
-    const type = 'blackpool';
-    const client = new ProxyCookieHttpClient(process.env.BLACKPOOL_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new BlackpoolImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Durham', () => {
-    const type = 'durham';
-    const client = new ProxyCookieHttpClient(process.env.DURHAM_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new DurhamImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Enterprise', () => {
-    const type = 'enterprise';
-    const client = new ProxyCookieHttpClient(process.env.ENTERPRISE_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new EnterpriseImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Ibistro', () => {
-    const type = 'ibistro';
-    const client = new ProxyCookieHttpClient(process.env.IBISTRO_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new IbistroImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Iguana', () => {
-    const type = 'iguana';
-    const client = new ProxyCookieHttpClient(process.env.IGUANA_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new IguanaImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Koha V20', () => {
-    const type = 'kohaV20';
-    const client = new ProxyCookieHttpClient(process.env.KOHAV20_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new KohaV20Implementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Koha V22', () => {
-    const type = 'kohaV22';
-    const client = new ProxyCookieHttpClient(process.env.KOHAV22_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new KohaV22Implementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Luci', () => {
-    const type = 'luci';
-    const client = new ProxyCookieHttpClient(process.env.LUCI_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new LuciImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Prism', () => {
-    const type = 'prism';
-    const client = new ProxyCookieHttpClient(process.env.PRISM_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new PrismImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
-        }, 600000);
-    });
-});
-
-describe('Spydus', () => {
-    const type = 'spydus';
-    const client = new ProxyCookieHttpClient(process.env.SPYDUS_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new SpydusImplementation(client);
-    
-    describe('Libraries', () => {
-            test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-                await testLibraries(implementation, name, code, service);
-            }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-                await testBooks(implementation, name, code, service);
-            }, 600000);
-    });
-});
-
-describe('Webpac', () => {
-    const type = 'webpac';
-    const client = new ProxyCookieHttpClient(process.env.WEBPAC_PROXY ?? process.env.DEFAULT_PROXY);
-    const implementation = new WebpacImplementation(client);
-    
-    describe('Libraries', () => {
-        test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testLibraries(implementation, name, code, service);
-        }, 600000);
-    });
-
-    describe('Books', () => {
-        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
-            await testBooks(implementation, name, code, service);
+        test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string) => {
+            await testBooks(client, name, code);
         }, 600000);
     });
 });

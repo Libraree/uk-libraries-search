@@ -181,7 +181,10 @@ Unit tests use [Proxyman](https://proxyman.io) log files to simulate HTTP traffi
 
 ## Known Issues
 
-1. Bexley - unable to retrieve availability issues because of cookie issues.
+| Service           | Type      | Problem                                                      | Identified |
+| ----------------- | --------- | ------------------------------------------------------------ | ---------- |
+| Bexley            | `arenaV7` | LFR_SESSION_STATE cookie - JS-generated.                     | 23/08/2023 |
+| Various, evolving | `arenaV7` | Catalogues are undergoing reconfiguration and upgrades leading to the failure of searches. This problem is outside of this package's control. | 23/08/2023 |
 
 ## Acknowledgements
 
