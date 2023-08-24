@@ -78,162 +78,162 @@ const testBooks = async(implementation: IImplementation, name: string, code: str
     expect(result!.id).toBeTruthy();
 };
 
-describe.skip('Arena V6', () => {
+describe('Arena V6', () => {
     const type = 'arenaV6';
     const client = new ProxyCookieHttpClient(process.env.ARENAV6_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new ArenaV6Implementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Arena V7', () => {
+describe('Arena V7', () => {
     const type = 'arenaV7';
     const client = new ProxyCookieHttpClient(process.env.ARENAV7_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new ArenaV7Implementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Blackpool', () => {
+describe('Blackpool', () => {
     const type = 'blackpool';
     const client = new ProxyCookieHttpClient(process.env.BLACKPOOL_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new BlackpoolImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Durham', () => {
+describe('Durham', () => {
     const type = 'durham';
     const client = new ProxyCookieHttpClient(process.env.DURHAM_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new DurhamImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Enterprise', () => {
+describe('Enterprise', () => {
     const type = 'enterprise';
     const client = new ProxyCookieHttpClient(process.env.ENTERPRISE_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new EnterpriseImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Ibistro', () => {
+describe('Ibistro', () => {
     const type = 'ibistro';
     const client = new ProxyCookieHttpClient(process.env.IBISTRO_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new IbistroImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Iguana', () => {
+describe('Iguana', () => {
     const type = 'iguana';
     const client = new ProxyCookieHttpClient(process.env.IGUANA_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new IguanaImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Koha V20', () => {
+describe('Koha V20', () => {
     const type = 'kohaV20';
     const client = new ProxyCookieHttpClient(process.env.KOHAV20_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new KohaV20Implementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Koha V22', () => {
+describe('Koha V22', () => {
     const type = 'kohaV22';
     const client = new ProxyCookieHttpClient(process.env.KOHAV22_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new KohaV22Implementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
@@ -258,54 +258,54 @@ describe('Luci', () => {
     });
 });
 
-describe.skip('Prism', () => {
+describe('Prism', () => {
     const type = 'prism';
     const client = new ProxyCookieHttpClient(process.env.PRISM_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new PrismImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
     });
 });
 
-describe.skip('Spydus', () => {
+describe('Spydus', () => {
     const type = 'spydus';
     const client = new ProxyCookieHttpClient(process.env.SPYDUS_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new SpydusImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
             test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
                 await testLibraries(implementation, name, code, service);
             }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
                 await testBooks(implementation, name, code, service);
             }, 600000);
     });
 });
 
-describe.skip('Webpac', () => {
+describe('Webpac', () => {
     const type = 'webpac';
     const client = new ProxyCookieHttpClient(process.env.WEBPAC_PROXY ?? process.env.DEFAULT_PROXY);
     const implementation = new WebpacImplementation(client);
     
-    describe.skip('Libraries', () => {
+    describe('Libraries', () => {
         test.concurrent.each(getServices(type, librariesIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testLibraries(implementation, name, code, service);
         }, 600000);
     });
 
-    describe.skip('Books', () => {
+    describe('Books', () => {
         test.concurrent.each(getServices(type, booksIgnoreList))('%p %p', async (name: string, code: string, service: Service) => {
             await testBooks(implementation, name, code, service);
         }, 600000);
