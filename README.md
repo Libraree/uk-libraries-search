@@ -182,7 +182,6 @@ Unit tests use [Proxyman](https://proxyman.io) log files to simulate HTTP traffi
 ## Known Issues
 
 1. Bexley - unable to retrieve availability issues because of cookie issues.
-2. Bournemouth - availability information isn't currently available in their online catalogue.
 
 ## Acknowledgements
 

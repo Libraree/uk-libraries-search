@@ -41,7 +41,6 @@ const librariesIgnoreList = [
 
 const booksIgnoreList = [
     'Bexley', // LFR_SESSION_STATE cookie - JS-generated
-    'Bournemouth' // No availability information on item pages.
 ];
 
 const getServices = (type: string, ignoreList: string[]): (string | Service)[][] => {
