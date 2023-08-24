@@ -66,6 +66,10 @@ export class KohaV20Implementation implements IImplementation {
             result.url = bibLink;
         
             const itemPageRequest = await this._client.get(`${bibLink}&viewallitems=1`);
+            
+            if (itemPageRequest.status == 500)
+                continue;
+
             itemPageRequest.ensureSuccessful();
 
             $ = cheerio.load(itemPageRequest.body);

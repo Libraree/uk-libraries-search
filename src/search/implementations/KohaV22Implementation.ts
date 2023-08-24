@@ -59,6 +59,10 @@ export class KohaV22Implementation implements IImplementation {
             bibLink = `${bibLink}/AJAX?method=getCopyDetails&format=Reference&recordId=${result.id}`;
           
             const itemPageRequest = await this._client.get(bibLink);
+
+            if (itemPageRequest.status == 500)
+                continue;
+
             itemPageRequest.ensureSuccessful();
 
             $ = cheerio.load(itemPageRequest.getBodyAsJson().modalBody as string);
