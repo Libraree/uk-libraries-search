@@ -46,6 +46,11 @@ export class WebpacImplementation implements IImplementation {
             const $ = cheerio.load(responseHoldingsRequest.body);
 
             const id = $('#recordnum');
+
+            if (!id.attr('href')) {
+                continue;
+            }
+
             result.id = id.attr('href').replace('/record=', '');
 
             $('table.bibItems tr.bibItemsEntry').each(function (idx, tr) {
