@@ -20,9 +20,9 @@ jobs:
 
       - name: Create Changelog
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+        uses: TriPSs/conventional-changelog-action@v3.7.1
         with:
-          github-token: ${ secrets.GITHUB_TOKEN }
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           fallback-version: 1.0.0
           output-file: "false"
 
@@ -30,11 +30,11 @@ jobs:
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
-          GITHUB_TOKEN: ${ secrets.GITHUB_TOKEN }
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${ steps.changelog.outputs.tag }
-          release_name: ${ steps.changelog.outputs.tag }
-          body: ${ steps.changelog.outputs.clean_changelog }
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Build
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
