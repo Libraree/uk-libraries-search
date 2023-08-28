@@ -22,7 +22,7 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
-          github-token: ${ secrets.github_token }
+          github-token: ${ secrets.GITHUB_TOKEN }
           fallback-version: 1.0.0
           output-file: "false"
 
@@ -30,23 +30,18 @@ jobs:
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
-          GITHUB_TOKEN: ${ secrets.github_token }
+          GITHUB_TOKEN: ${ secrets.GITHUB_TOKEN }
         with:
           tag_name: ${ steps.changelog.outputs.tag }
           release_name: ${ steps.changelog.outputs.tag }
           body: ${ steps.changelog.outputs.clean_changelog }
 
-      - name: Update my-file.json description
-        uses: jossef/action-set-json-field@v2.1
-        with:
-          file: package.json
-          field: version
-          value: ${ steps.changelog.outputs.version }
-
       - name: Build
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         run: npm run build
 
       - name: Publish
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
