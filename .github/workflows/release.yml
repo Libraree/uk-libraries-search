@@ -1,4 +1,7 @@
 name: Release # Workflow name displayed on GitHub
+permissions:
+  contents: write
+  pull-requests: write 
 on:
   workflow_dispatch: # Trigger manually
 jobs:
