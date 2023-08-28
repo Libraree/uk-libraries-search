@@ -1,6 +1,6 @@
 {
   "name": "@libraree/uk-libraries-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search for books in any UK public library's catalogue and check availability at local branches.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
