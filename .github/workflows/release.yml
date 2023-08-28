@@ -1,18 +1,52 @@
-changelog:
-    exclude:
-      labels:
-        - ignore-for-release
-      authors:
-        - Libraree
-    categories:
-      - title: Major Changes
-        labels:
-          - Semver-Major
-          - breaking-change
-      - title: New Features
-        labels:
-          - Semver-Minor
-          - enhancement
-      - title: Other Changes
-        labels:
-          - "*"
+name: Release # Workflow name displayed on GitHub
+on:
+  workflow_dispatch: # Trigger manually
+jobs:
+  new-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Checkout our working repository
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install modules
+        run: npm install
+
+      - name: Test
+        run: npm run test-ci
+
+      - name: Create Changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${ secrets.github_token }
+          fallback-version: 1.0.0
+          output-file: "false"
+
+      - name: Create Release # This action will create the actual release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${ secrets.github_token }
+        with:
+          tag_name: ${ steps.changelog.outputs.tag }
+          release_name: ${ steps.changelog.outputs.tag }
+          body: ${ steps.changelog.outputs.clean_changelog }
+
+      - name: Update my-file.json description
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: package.json
+          field: version
+          value: ${ steps.changelog.outputs.version }
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish
+        run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
