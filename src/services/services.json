@@ -1142,21 +1142,17 @@
 	{
 		"name": "Merton",
 		"code": "E09000024",
-		"catalogueUrl": "https://libraries.merton.gov.uk/client/en_GB/merton/",
-		"enterprise": {
-			"url": "https://libraries.merton.gov.uk/client/en_GB/merton/",
-			"libraryNameFilter": "Merton",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"Available"
-			]
+		"catalogueUrl": "https://libraries.merton.gov.uk/",
+		"luci": {
+			"url": "https://libraries.merton.gov.uk/",
+			"home": "home"
 		}
 	},
 	{
 		"name": "Middlesbrough",
 		"code": "E06000002",
 		"catalogueUrl": "https://libraries.middlesbrough.gov.uk/",
-		"kohaV20": {
+		"kohaV22": {
 			"url": "https://libraries.middlesbrough.gov.uk/"
 		}
 	},
@@ -1381,7 +1377,6 @@
 		"arenaV7": {
 			"url": "https://catalogue.librariesni.org.uk/",
 			"organisationName": "Libraries NI",
-			"organisationId": "AUKLNI|1",
 			"arenaName": "AUKLNI",
 			"advancedUrl": "extended-search"
 		}
