@@ -110,8 +110,8 @@ The following UK library services are supported by this package:
 |E08000003|[Manchester](https://manchester.spydus.co.uk/)|Spydus|
 |E06000035|[Medway](https://medway.spydus.co.uk/)|Spydus|
 |W06000024|[Merthyr Tudful - Merthyr Tydfil](https://prism.librarymanagementcloud.co.uk/merthyr/)|Prism|
-|E09000024|[Merton](https://libraries.merton.gov.uk/client/en_GB/merton/)|Enterprise|
-|E06000002|[Middlesbrough](https://libraries.middlesbrough.gov.uk/)|KohaV20|
+|E09000024|[Merton](https://libraries.merton.gov.uk/)|Luci|
+|E06000002|[Middlesbrough](https://libraries.middlesbrough.gov.uk/)|KohaV22|
 |S12000019|[Midlothian](https://libraries.midlothian.gov.uk/web/arena/)|ArenaV7|
 |E06000042|[Milton Keynes](https://miltonkeynes.spydus.co.uk/)|Spydus|
 |S12000020|[Moray](https://prism.librarymanagementcloud.co.uk/moray/)|Prism|
@@ -214,4 +214,4 @@ The following UK library services are supported by this package:
 |E06000014|[York City](https://cyc.sdp.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 
 
-*Last Updated: 2023-08-28T11:02:22.510Z*
+*Last Updated: 2023-11-25T16:34:07.507Z*
