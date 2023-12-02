@@ -48,6 +48,13 @@ export class ArenaV7Implementation implements IImplementation {
 
               return result;
             }
+            else if ($('select[name="BranchId"] option').length > 1) {
+              $('select[name="BranchId"] option').each(function () {
+                if (isLibrary($(this).text())) result.branches.push($(this).text());
+              });
+
+              return result;
+            }
           }
       
         // Get the advanced search page

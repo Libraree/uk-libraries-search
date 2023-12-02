@@ -1378,7 +1378,8 @@
 			"url": "https://catalogue.librariesni.org.uk/",
 			"organisationName": "Libraries NI",
 			"arenaName": "AUKLNI",
-			"advancedUrl": "extended-search"
+			"advancedUrl": "extended-search",
+			"signupUrl": "https://www.librariesni.org.uk/becoming-a-member/"
 		}
 	},
 	{
