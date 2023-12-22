@@ -909,14 +909,14 @@
 	{
 		"name": "Kingston upon Hull",
 		"code": "E06000010",
-		"catalogueUrl": "https://hull.sirsidynix.net.uk/",
-		"ibistro": {
-			"url": "https://hull.sirsidynix.net.uk/",
+		"catalogueUrl": "https://hull.ent.sirsidynix.net.uk/client/en_GB/default/",
+		"enterprise": {
+			"url": "https://hull.ent.sirsidynix.net.uk/client/en_GB/default/",
+			"titleDetailUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
+			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
 			"available": [
 				"Item on shelves"
-			],
-			"home": "uhtbin/cgisirsi/x/0/0/57/49?user_id=HULLWEB&amp;password=",
-			"search": "uhtbin/cgisirsi/x/0/0/5?searchdata1="
+			]
 		}
 	},
 	{
@@ -1159,13 +1159,9 @@
 	{
 		"name": "Midlothian",
 		"code": "S12000019",
-		"catalogueUrl": "https://libraries.midlothian.gov.uk/web/arena/",
-		"arenaV7": {
-			"url": "https://libraries.midlothian.gov.uk/web/arena/",
-			"organisationId": "AUK000075|0",
-			"arenaName": "AUK000075",
-			"advancedUrl": "extended-search",
-			"signupUrl": "https://libraries.midlothian.gov.uk/web/arena/online-registration"
+		"catalogueUrl": "https://midlothian.spydus.co.uk/",
+		"spydus": {
+			"url": "https://midlothian.spydus.co.uk/"
 		}
 	},
 	{

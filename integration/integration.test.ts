@@ -27,6 +27,7 @@ const librariesIgnoreList = [
 
 const booksIgnoreList = [
     'Bexley', // LFR_SESSION_STATE cookie - JS-generated
+    'Oxfordshire' // always fails on GitHub but works locally.
 ];
 
 const allTypes: string[] = [
