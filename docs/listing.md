@@ -94,7 +94,7 @@ The following UK library services are supported by this package:
 |X000000JR|[Jersey](https://prism.librarymanagementcloud.co.uk/jersey/)|Prism|
 |E09000020|[Kensington and Chelsea](https://trib.ent.sirsidynix.net.uk/client/en_GB/rbkc/)|Enterprise|
 |E10000016|[Kent](https://kent.spydus.co.uk/)|Spydus|
-|E06000010|[Kingston upon Hull](https://hull.sirsidynix.net.uk/)|Ibistro|
+|E06000010|[Kingston upon Hull](https://hull.ent.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 |E09000021|[Kingston upon Thames](https://llc.ent.sirsidynix.net.uk/client/en_GB/kingston/)|Enterprise|
 |E08000034|[Kirklees](http://kir.ent.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 |E08000011|[Knowsley](https://catalogue.knowsley.gov.uk/)|KohaV20|
@@ -112,7 +112,7 @@ The following UK library services are supported by this package:
 |W06000024|[Merthyr Tudful - Merthyr Tydfil](https://prism.librarymanagementcloud.co.uk/merthyr/)|Prism|
 |E09000024|[Merton](https://libraries.merton.gov.uk/)|Luci|
 |E06000002|[Middlesbrough](https://libraries.middlesbrough.gov.uk/)|KohaV22|
-|S12000019|[Midlothian](https://libraries.midlothian.gov.uk/web/arena/)|ArenaV7|
+|S12000019|[Midlothian](https://midlothian.spydus.co.uk/)|Spydus|
 |E06000042|[Milton Keynes](https://miltonkeynes.spydus.co.uk/)|Spydus|
 |S12000020|[Moray](https://prism.librarymanagementcloud.co.uk/moray/)|Prism|
 |E08000021|[Newcastle upon Tyne](https://libraries.newcastle.gov.uk/)|KohaV22|
@@ -214,4 +214,4 @@ The following UK library services are supported by this package:
 |E06000014|[York City](https://cyc.sdp.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 
 
-*Last Updated: 2023-12-02T20:41:13.331Z*
+*Last Updated: 2023-12-22T20:37:19.950Z*

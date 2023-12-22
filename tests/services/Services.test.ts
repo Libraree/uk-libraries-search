@@ -43,7 +43,6 @@ describe('Services', () => {
         expect(_.find(json, x => x.blackpool !== undefined)).toBeDefined();
         expect(_.find(json, x => x.durham !== undefined)).toBeDefined();
         expect(_.find(json, x => x.enterprise !== undefined)).toBeDefined();
-        expect(_.find(json, x => x.ibistro !== undefined)).toBeDefined();
         expect(_.find(json, x => x.iguana !== undefined)).toBeDefined();
         expect(_.find(json, x => x.kohaV20 !== undefined)).toBeDefined();
         expect(_.find(json, x => x.kohaV22 !== undefined)).toBeDefined();

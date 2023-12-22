@@ -11,7 +11,6 @@ import { ArenaV7Implementation } from './search/implementations/ArenaV7Implement
 import { BlackpoolImplementation } from './search/implementations/BlackpoolImplementation';
 import { DurhamImplementation } from './search/implementations/DurhamImplementation';
 import { EnterpriseImplementation } from './search/implementations/EnterpriseImplementation';
-import { IbistroImplementation } from './search/implementations/IbistroImplementation';
 import { IguanaImplementation } from './search/implementations/IguanaImplementation';
 import { KohaV20Implementation } from './search/implementations/KohaV20Implementation';
 import { KohaV22Implementation } from './search/implementations/KohaV22Implementation';
@@ -38,7 +37,6 @@ export class Client implements IClient {
         this._implementations['Blackpool'] = new BlackpoolImplementation(httpClient);
         this._implementations['Durham'] = new DurhamImplementation(httpClient);
         this._implementations['Enterprise'] = new EnterpriseImplementation(httpClient);
-        this._implementations['Ibistro'] = new IbistroImplementation(httpClient);
         this._implementations['Iguana'] = new IguanaImplementation(httpClient);
         this._implementations['KohaV20'] = new KohaV20Implementation(httpClient);
         this._implementations['KohaV22'] = new KohaV22Implementation(httpClient);
