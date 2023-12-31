@@ -5,7 +5,6 @@ import * as _ from 'underscore'
     Blackpool, 
     Durham, 
     Enterprise, 
-    Ibistro, 
     Iguana, 
     KohaV20, 
     KohaV22, 
@@ -57,9 +56,6 @@ export class Services {
                 break;
             case 'Enterprise':
                 result.enterprise = Object.assign(new Enterprise(), service.enterprise);
-                break;
-            case 'Ibistro':
-                result.ibistro = Object.assign(new Ibistro(), service.ibistro);
                 break;
             case 'Iguana':
                 result.iguana = Object.assign(new Iguana(), service.iguana);

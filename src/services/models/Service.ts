@@ -7,7 +7,6 @@ export class Service {
     blackpool?: Blackpool;
     durham?: Durham;
     enterprise?: Enterprise;
-    ibistro?: Ibistro;
     iguana?: Iguana;
     kohaV20?: KohaV20;
     kohaV22?: KohaV22;
@@ -22,7 +21,6 @@ export class Service {
         if (this.blackpool !== undefined) return 'Blackpool';
         if (this.durham !== undefined) return 'Durham';
         if (this.enterprise !== undefined) return 'Enterprise';
-        if (this.ibistro !== undefined) return 'Ibistro';
         if (this.iguana !== undefined) return 'Iguana';
         if (this.kohaV20 !== undefined) return 'KohaV20';
         if (this.kohaV22 !== undefined) return 'KohaV22';
@@ -66,13 +64,6 @@ export class Enterprise {
     libraryNameFilter?: string;
     availabilityUrl?: string;
     available: string[];
-}
-
-export class Ibistro {
-    url: string;
-    available: string[];
-    home: string;
-    search: string;
 }
 
 export class Iguana {

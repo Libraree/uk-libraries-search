@@ -36,7 +36,6 @@ const allTypes: string[] = [
     'blackpool',
     'durham',
     'enterprise',
-    'ibistro',
     'iguana',
     'kohaV20',
     'kohaV22',
