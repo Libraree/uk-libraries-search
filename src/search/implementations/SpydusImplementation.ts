@@ -26,7 +26,7 @@ export class SpydusImplementation implements IImplementation {
             return result;
         }
 
-        const response = await this._client.get(`${service.spydus.url}${LIBS_URL}`, { 'Cookie': 'ALLOWCOOKIES_443=1' });
+        const response = await this._client.get(`${service.spydus.url}${LIBS_URL.replace('WPAC', service.spydus.mode ?? 'WPAC')}`, { 'Cookie': 'ALLOWCOOKIES_443=1' });
         response.ensureSuccessful();
 
         const $ = cheerio.load(response.body);
@@ -47,7 +47,7 @@ export class SpydusImplementation implements IImplementation {
             const result = new SearchResult(service.name, service.code, isbn);
             results.push(result);
 
-            result.url = `${service.spydus.url}${SEARCH_URL}${isbn}`;
+            result.url = `${service.spydus.url}${SEARCH_URL.replace('WPAC', service.spydus.mode ?? 'WPAC')}${isbn}`;
 
             const itemResponse = await this._client.get(result.url);
             itemResponse.ensureSuccessful();

@@ -284,7 +284,8 @@
 		"code": "E08000033",
 		"catalogueUrl": "https://calderdale.spydus.co.uk/",
 		"spydus": {
-			"url": "https://calderdale.spydus.co.uk/"
+			"url": "https://calderdale.spydus.co.uk/",
+			"mode": "OPAC"
 		}
 	},
 	{

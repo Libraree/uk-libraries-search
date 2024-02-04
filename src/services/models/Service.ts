@@ -92,6 +92,7 @@ export class Prism {
 export class Spydus {
     url: string;
     branches?: string[];
+    mode?: string;
 }
 
 export class Webpac {
