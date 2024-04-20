@@ -135,9 +135,9 @@
 	{
 		"name": "Blackpool",
 		"code": "E06000009",
-		"catalogueUrl": "https://www.blackpool.gov.uk/Residents/Libraries-arts-and-heritage/Libraries/Library-catalogue-search.aspx",
-		"blackpool": {
-			"url": "https://www.blackpool.gov.uk/Residents/Libraries-arts-and-heritage/Libraries/Library-catalogue-search.aspx"
+		"catalogueUrl": "https://blackpool.spydus.co.uk/",
+		"spydus": {
+			"url": "https://blackpool.spydus.co.uk/"
 		}
 	},
 	{
@@ -782,9 +782,10 @@
 	{
 		"name": "Halton",
 		"code": "E06000006",
-		"catalogueUrl": "https://hpl.koha-ptfs.co.uk/",
-		"kohaV20": {
-			"url": "https://hpl.koha-ptfs.co.uk/"
+		"catalogueUrl": "https://halton.aspendiscovery.co.uk/",
+		"kohaV22": {
+			"url": "https://halton.aspendiscovery.co.uk/",
+			"librariesUrl": "https://halton.aspendiscovery.co.uk/AJAX/JSON?method=getHoursAndLocations"
 		}
 	},
 	{
@@ -1327,7 +1328,7 @@
 		"name": "Northamptonshire",
 		"code": "E10000021",
 		"catalogueUrl": "https://www.librarycatalogue.northamptonshire.gov.uk/web/arena/",
-		"arenaV6": {
+		"arenaV7": {
 			"url": "https://www.librarycatalogue.northamptonshire.gov.uk/web/arena/",
 			"organisationName": "Northamptonshire",
 			"organisationId": "AUK000256|1",
@@ -1592,10 +1593,9 @@
 	{
 		"name": "Scottish Borders",
 		"code": "S12000026",
-		"catalogueUrl": "https://liveborders.inforlib.uk/",
-		"iguana": {
-			"url": "https://liveborders.inforlib.uk/iguana/",
-			"database": "1"
+		"catalogueUrl": "https://liveborders.spydus.co.uk/",
+		"spydus": {
+			"url": "https://liveborders.spydus.co.uk/"
 		}
 	},
 	{
@@ -1621,12 +1621,9 @@
 	{
 		"name": "Shetland Islands",
 		"code": "S12000027",
-		"catalogueUrl": "https://prism.librarymanagementcloud.co.uk/shetland/",
-		"prism": {
-			"url": "https://prism.librarymanagementcloud.co.uk/shetland/",
-			"available": [
-				"Available"
-			]
+		"catalogueUrl": "https://shetland.spydus.co.uk/",
+		"spydus": {
+			"url": "https://shetland.spydus.co.uk/"
 		}
 	},
 	{
@@ -1672,9 +1669,9 @@
 	{
 		"name": "South Ayrshire",
 		"code": "S12000028",
-		"catalogueUrl": "https://library.south-ayrshire.gov.uk/",
-		"webpac": {
-			"url": "https://library.south-ayrshire.gov.uk/"
+		"catalogueUrl": "https://sayrc.eu.iiivega.com/",
+		"vega": {
+			"domain": "sayrc.eu.iiivega.com"
 		}
 	},
 	{

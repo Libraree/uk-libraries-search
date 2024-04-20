@@ -40,7 +40,6 @@ describe('Services', () => {
     test('No redundant service types', () => {
         expect(_.find(json, x => x.arenaV6 !== undefined)).toBeDefined();
         expect(_.find(json, x => x.arenaV7 !== undefined)).toBeDefined();
-        expect(_.find(json, x => x.blackpool !== undefined)).toBeDefined();
         expect(_.find(json, x => x.durham !== undefined)).toBeDefined();
         expect(_.find(json, x => x.enterprise !== undefined)).toBeDefined();
         expect(_.find(json, x => x.iguana !== undefined)).toBeDefined();
@@ -49,6 +48,5 @@ describe('Services', () => {
         expect(_.find(json, x => x.luci !== undefined)).toBeDefined();
         expect(_.find(json, x => x.prism !== undefined)).toBeDefined();
         expect(_.find(json, x => x.spydus !== undefined)).toBeDefined();
-        expect(_.find(json, x => x.webpac !== undefined)).toBeDefined();
     });
 });

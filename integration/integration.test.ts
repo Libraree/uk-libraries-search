@@ -27,13 +27,13 @@ const librariesIgnoreList = [
 
 const booksIgnoreList = [
     'Bexley', // LFR_SESSION_STATE cookie - JS-generated
-    'Oxfordshire' // always fails on GitHub but works locally.
+    'Oxfordshire', // always fails on GitHub but works locally.,
+    'Telford and Wrekin' // ability to search by ISBN removed.
 ];
 
 const allTypes: string[] = [
     'arenaV6',
     'arenaV7',
-    'blackpool',
     'durham',
     'enterprise',
     'iguana',
@@ -42,7 +42,7 @@ const allTypes: string[] = [
     'luci',
     'prism',
     'spydus',
-    'webpac'
+    'vega'
 ];
 
 const getServices = (type: string, ignoreList: string[]): string[][] => {

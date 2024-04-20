@@ -1,29 +1,29 @@
 import { expect, test } from '@jest/globals';
-import { BlackpoolImplementation } from '../../../src/search/implementations/BlackpoolImplementation';
 import { Services } from '../../../src/services/Services';
 import { ProxymanHttpClient } from '../../ProxymanHttpClient';
+import { VegaImplementation } from '../../../src/search/implementations/VegaImplementation';
 
-const folder = `${__dirname}/../data/blackpool`;
+const folder = `${__dirname}/../data/vega`;
 const services = new Services();
 
 test('Gets Libraries', async () => {
-    const service = 'Blackpool';
-    const client = new ProxymanHttpClient(`${folder}/blackpool-libraries.proxymanlogv2`);
-    const impl = new BlackpoolImplementation(client);
+    const service = 'South Ayrshire';
+    const client = new ProxymanHttpClient(`${folder}/southayrshire-libraries.proxymanlogv2`);
+    const impl = new VegaImplementation(client);
     const result = await impl.getLibraries(services.getService(service));
     expect(result.name).toEqual(service);
     expect(result.branches.length).toBeGreaterThan(0);
 });
 
 test('Gets Books', async () => {
-    const service = 'Blackpool';
-    const client = new ProxymanHttpClient(`${folder}/blackpool-search.proxymanlogv2`);
-    const impl = new BlackpoolImplementation(client);
+    const service = 'South Ayrshire';
+    const client = new ProxymanHttpClient(`${folder}/southayrshire-search.proxymanlogv2`);
+    const impl = new VegaImplementation(client);
     const result = await impl.getBooks(services.getService(service), [
-        '9780747532743',
+        '9780590353427',
         '9780141187761',
-        '9780141439518',
-        '9780521618748',
+        '9780141040349',
+        '9780140620580',
         '9780007371464'
     ]);
 

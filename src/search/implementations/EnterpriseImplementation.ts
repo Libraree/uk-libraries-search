@@ -163,7 +163,7 @@ export class EnterpriseImplementation implements IImplementation {
             const titleUrl =
                 `${service.enterprise.url}${service.enterprise.titleDetailUrl.replace('[ITEMID]', itemId.split('/').join('$002f'))}`;
 
-            const titleDetailRequest = await this._client.post(titleUrl, null, HEADER_POST);
+            const titleDetailRequest = await this._client.post(titleUrl, null, { ...{sdcsrf: csrf}, ...HEADER_POST });
             const titles = titleDetailRequest.getBodyAsJson();
             const libs = {};
 

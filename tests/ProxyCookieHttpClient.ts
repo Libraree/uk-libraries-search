@@ -125,7 +125,8 @@ export class ProxyCookieHttpClient implements IHttpClient {
             headers: headers as Record<string, string>,
             user_agent: UserAgent,
             agent: this._useProxy && url.indexOf('https') == 0 ? this._httpsProxy : (this._useProxy ? this._httpProxy : undefined),
-            rejectUnauthorized: false
+            rejectUnauthorized: false,
+            json: typeof body !== 'string' 
           });
 
         if (response.cookies) {

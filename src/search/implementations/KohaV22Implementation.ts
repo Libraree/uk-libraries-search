@@ -20,19 +20,34 @@ export class KohaV22Implementation implements IImplementation {
 
     async getLibraries(service: Service): Promise<LibraryResult> {
         const result = new LibraryResult(service.name, service.code);
-        const url = `${service.kohaV22.url}${LIBS_URL}`;
-  
-        const libraryPageRequest = await this._client.get(url);
-        libraryPageRequest.ensureSuccessful();
 
-        const $ = cheerio.load(libraryPageRequest.body);
+        if (service.kohaV22.librariesUrl) {
+            const libraryPageRequest = await this._client.get(service.kohaV22.librariesUrl);
+            libraryPageRequest.ensureSuccessful();
     
-        $('option').each((idx, option) => {
-            if ((option.attribs['value'].startsWith('owning_location_main:') || option.attribs['value'].startsWith('owning_location:')) && isLibrary($(option).text().trim()))
-                result.branches.push($(option).text().trim());
-        });
+            const $ = cheerio.load(libraryPageRequest.body);
         
-        return result;
+            $('option').each((idx, option) => {
+                result.branches.push($(option).text().trim());
+            });
+            
+            return result;
+        }
+        else {
+            const url = `${service.kohaV22.url}${LIBS_URL}`;
+  
+            const libraryPageRequest = await this._client.get(url);
+            libraryPageRequest.ensureSuccessful();
+    
+            const $ = cheerio.load(libraryPageRequest.body);
+        
+            $('option').each((idx, option) => {
+                if ((option.attribs['value'].startsWith('owning_location_main:') || option.attribs['value'].startsWith('owning_location:')) && isLibrary($(option).text().trim()))
+                    result.branches.push($(option).text().trim());
+            });
+            
+            return result;
+        }
     }
 
     async getBooks(service: Service, isbns: string[]): Promise<SearchResult[]> {

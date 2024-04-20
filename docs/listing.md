@@ -17,7 +17,7 @@ The following UK library services are supported by this package:
 |E09000004|[Bexley](https://arena.yourlondonlibrary.net/web/bexley/)|ArenaV7|
 |E08000025|[Birmingham](https://birmingham.spydus.co.uk/)|Spydus|
 |E06000008|[Blackburn with Darwen](https://bwdlibraries.spydus.co.uk/)|Spydus|
-|E06000009|[Blackpool](https://www.blackpool.gov.uk/Residents/Libraries-arts-and-heritage/Libraries/Library-catalogue-search.aspx)|Blackpool|
+|E06000009|[Blackpool](https://blackpool.spydus.co.uk/)|Spydus|
 |W06000019|[Blaenau Gwent](https://wales.ent.sirsidynix.net.uk/client/en_GB/bgwent_en/)|Enterprise|
 |E08000001|[Bolton](https://bolton.spydus.co.uk/)|Spydus|
 |E06000028|[Bournemouth](https://prism.librarymanagementcloud.co.uk/bournemouth/)|Prism|
@@ -76,7 +76,7 @@ The following UK library services are supported by this package:
 |X000000GN|[Guernsey](https://www.catalogue.library.gg/)|ArenaV7|
 |W06000002|[Gwynedd](https://wales.ent.sirsidynix.net.uk/client/en_GB/gwynedd_en/)|Enterprise|
 |E09000012|[Hackney](https://llc.ent.sirsidynix.net.uk/client/en_GB/hackney/)|Enterprise|
-|E06000006|[Halton](https://hpl.koha-ptfs.co.uk/)|KohaV20|
+|E06000006|[Halton](https://halton.aspendiscovery.co.uk/)|KohaV22|
 |E09000013|[Hammersmith and Fulham](https://tlc.ent.sirsidynix.net.uk/client/en_GB/lbhf/)|Enterprise|
 |E10000014|[Hampshire](https://hampshire.spydus.co.uk/)|Spydus|
 |E09000014|[Haringey](https://llc.ent.sirsidynix.net.uk/client/en_GB/haringey/)|Enterprise|
@@ -125,7 +125,7 @@ The following UK library services are supported by this package:
 |E06000024|[North Somerset](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
 |E08000022|[North Tyneside](https://prism.librarymanagementcloud.co.uk/northtyneside/)|Prism|
 |E10000023|[North Yorkshire](https://prism.librarymanagementcloud.co.uk/northyorkshire/)|Prism|
-|E10000021|[Northamptonshire](https://www.librarycatalogue.northamptonshire.gov.uk/web/arena/)|ArenaV6|
+|E10000021|[Northamptonshire](https://www.librarycatalogue.northamptonshire.gov.uk/web/arena/)|ArenaV7|
 |X000000NI|[Northern Ireland](https://catalogue.librariesni.org.uk/)|ArenaV7|
 |E06000057|[Northumberland](https://northumberland.spydus.co.uk/)|Spydus|
 |E06000018|[Nottingham City](https://emlib.ent.sirsidynix.net.uk/client/en_GB/nottcity/)|Enterprise|
@@ -151,10 +151,10 @@ The following UK library services are supported by this package:
 |E06000017|[Rutland](https://emlib.ent.sirsidynix.net.uk/client/en_GB/rutland/)|Enterprise|
 |E08000006|[Salford](https://salfordlibraries.spydus.co.uk/)|Spydus|
 |E08000028|[Sandwell](https://prism.librarymanagementcloud.co.uk/sandwell/)|Prism|
-|S12000026|[Scottish Borders](https://liveborders.inforlib.uk/)|Iguana|
+|S12000026|[Scottish Borders](https://liveborders.spydus.co.uk/)|Spydus|
 |E08000014|[Sefton](https://catalogue.sefton.gov.uk/)|KohaV22|
 |E08000019|[Sheffield](https://library.sheffield.gov.uk/client/en_GB/default/)|Enterprise|
-|S12000027|[Shetland Islands](https://prism.librarymanagementcloud.co.uk/shetland/)|Prism|
+|S12000027|[Shetland Islands](https://shetland.spydus.co.uk/)|Spydus|
 |E06000051|[Shropshire](https://libraries.shropshire.gov.uk/web/arena/)|ArenaV7|
 |W06000009|[Sir Benfro - Pembrokeshire](https://libraries.pembrokeshire.gov.uk/)|Iguana|
 |W06000008|[Sir Ceredigion - Ceredigion](https://libraries.ceredigion.gov.uk/client/en_GB/cer_en/)|Enterprise|
@@ -166,7 +166,7 @@ The following UK library services are supported by this package:
 |E06000039|[Slough](https://slough.spydus.co.uk/)|Spydus|
 |E08000029|[Solihull](https://solihull.spydus.co.uk/)|Spydus|
 |E10000027|[Somerset](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
-|S12000028|[South Ayrshire](https://library.south-ayrshire.gov.uk/)|Webpac|
+|S12000028|[South Ayrshire](https://sayrc.eu.iiivega.com/)|Vega|
 |E06000025|[South Gloucestershire](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
 |S12000029|[South Lanarkshire](https://www.sllclibrary.co.uk/)|Spydus|
 |E08000023|[South Tyneside](https://prism.librarymanagementcloud.co.uk/southtyneside/)|Prism|
@@ -214,4 +214,4 @@ The following UK library services are supported by this package:
 |E06000014|[York City](https://cyc.sdp.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 
 
-*Last Updated: 2024-02-04T20:56:43.482Z*
+*Last Updated: 2024-04-20T18:59:56.700Z*

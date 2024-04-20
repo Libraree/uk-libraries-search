@@ -8,7 +8,6 @@ import { IHttpClient } from './net/IHttpClient';
 import { SuperAgentHttpClient } from './net/SuperAgentHttpClient';
 import { ArenaV6Implementation } from './search/implementations/ArenaV6Implementation';
 import { ArenaV7Implementation } from './search/implementations/ArenaV7Implementation';
-import { BlackpoolImplementation } from './search/implementations/BlackpoolImplementation';
 import { DurhamImplementation } from './search/implementations/DurhamImplementation';
 import { EnterpriseImplementation } from './search/implementations/EnterpriseImplementation';
 import { IguanaImplementation } from './search/implementations/IguanaImplementation';
@@ -17,7 +16,7 @@ import { KohaV22Implementation } from './search/implementations/KohaV22Implement
 import { LuciImplementation } from './search/implementations/LuciImplementation';
 import { PrismImplementation } from './search/implementations/PrismImplementation';
 import { SpydusImplementation } from './search/implementations/SpydusImplementation';
-import { WebpacImplementation } from './search/implementations/WebpacImplementation';
+import { VegaImplementation } from './search/implementations/VegaImplementation';
 
 /**
  * Queries library services for books and finds other library information.
@@ -34,7 +33,6 @@ export class Client implements IClient {
         httpClient ??= new SuperAgentHttpClient();
         this._implementations['ArenaV6'] = new ArenaV6Implementation(httpClient);
         this._implementations['ArenaV7'] = new ArenaV7Implementation(httpClient);
-        this._implementations['Blackpool'] = new BlackpoolImplementation(httpClient);
         this._implementations['Durham'] = new DurhamImplementation(httpClient);
         this._implementations['Enterprise'] = new EnterpriseImplementation(httpClient);
         this._implementations['Iguana'] = new IguanaImplementation(httpClient);
@@ -43,7 +41,7 @@ export class Client implements IClient {
         this._implementations['Luci'] = new LuciImplementation(httpClient);
         this._implementations['Prism'] = new PrismImplementation(httpClient);
         this._implementations['Spydus'] = new SpydusImplementation(httpClient);
-        this._implementations['Webpac'] = new WebpacImplementation(httpClient);
+        this._implementations['Vega'] = new VegaImplementation(httpClient);
     }
 
     getService(service: string): ServiceResult {

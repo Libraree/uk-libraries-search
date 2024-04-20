@@ -2,7 +2,6 @@ import * as _ from 'underscore'
 ;import { 
     ArenaV6, 
     ArenaV7, 
-    Blackpool, 
     Durham, 
     Enterprise, 
     Iguana, 
@@ -12,7 +11,7 @@ import * as _ from 'underscore'
     Prism, 
     Service, 
     Spydus, 
-    Webpac } from './models/Service';
+    Vega } from './models/Service';
 import * as services from './services.json';
 
 export class Services {
@@ -48,9 +47,6 @@ export class Services {
             case 'ArenaV7':
                 result.arenaV7 = Object.assign(new ArenaV7(), service.arenaV7);
                 break;
-            case 'Blackpool':
-                result.blackpool = Object.assign(new Blackpool(), service.blackpool);
-                break;
             case 'Durham':
                 result.durham = Object.assign(new Durham(), service.durham);
                 break;
@@ -75,8 +71,8 @@ export class Services {
             case 'Spydus':
                 result.spydus = Object.assign(new Spydus(), service.spydus);
                 break;
-            case 'Webpac':
-                result.webpac = Object.assign(new Webpac(), service.webpac);
+            case 'Vega':
+                result.vega = Object.assign(new Vega(), service.vega);
                 break;
         }
 

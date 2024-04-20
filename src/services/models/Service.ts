@@ -4,7 +4,6 @@ export class Service {
     catalogueUrl: string;
     arenaV6?: ArenaV6;
     arenaV7?: ArenaV7;
-    blackpool?: Blackpool;
     durham?: Durham;
     enterprise?: Enterprise;
     iguana?: Iguana;
@@ -13,12 +12,11 @@ export class Service {
     luci?: Luci;
     prism?: Prism;
     spydus?: Spydus;
-    webpac?: Webpac;
+    vega?: Vega;
 
     get type(): string {
         if (this.arenaV6 !== undefined) return 'ArenaV6';
         if (this.arenaV7 !== undefined) return 'ArenaV7';
-        if (this.blackpool !== undefined) return 'Blackpool';
         if (this.durham !== undefined) return 'Durham';
         if (this.enterprise !== undefined) return 'Enterprise';
         if (this.iguana !== undefined) return 'Iguana';
@@ -27,7 +25,7 @@ export class Service {
         if (this.luci !== undefined) return 'Luci';
         if (this.prism !== undefined) return 'Prism';
         if (this.spydus !== undefined) return 'Spydus';
-        if (this.webpac !== undefined) return 'Webpac';
+        if (this.vega !== undefined) return 'Vega';
         throw 'Unknown service type.';
     }
 }
@@ -48,10 +46,6 @@ export class ArenaV7 {
     arenaName: string;
     advancedUrl: string;
     signupUrl?: string;
-}
-
-export class Blackpool {
-    url: string;
 }
 
 export class Durham {
@@ -77,6 +71,7 @@ export class KohaV20 {
 
 export class KohaV22 {
     url: string;
+    librariesUrl?: string;
 }
 
 export class Luci {
@@ -95,6 +90,6 @@ export class Spydus {
     mode?: string;
 }
 
-export class Webpac {
-    url: string;
+export class Vega {
+    domain: string;
 }
