@@ -7,8 +7,8 @@ const folder = `${__dirname}/../data/arenaV6`;
 const services = new Services();
 
 test('Gets Libraries', async () => {
-    const service = 'Northamptonshire';
-    const client = new ProxymanHttpClient(`${folder}/northants-libraries.proxymanlogv2`);
+    const service = 'Redcar and Cleveland';
+    const client = new ProxymanHttpClient(`${folder}/redcar-libraries.proxymanlogv2`);
     const impl = new ArenaV6Implementation(client);
     const result = await impl.getLibraries(services.getService(service));
     expect(result.name).toEqual(service);
@@ -16,14 +16,14 @@ test('Gets Libraries', async () => {
 });
 
 test('Gets Books', async () => {
-    const service = 'Northamptonshire';
-    const client = new ProxymanHttpClient(`${folder}/northants-search.proxymanlogv2`);
+    const service = 'Redcar and Cleveland';
+    const client = new ProxymanHttpClient(`${folder}/redcar-search.proxymanlogv2`);
     const impl = new ArenaV6Implementation(client);
     const result = await impl.getBooks(services.getService(service), [
         '9780747532743',
-        '9780141187761',
+        '9780141393049',
         '9780141439518',
-        '9780521618748',
+        '9780174434696',
         '9780007371464'
     ]);
 

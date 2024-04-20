@@ -59,7 +59,6 @@ export class ArenaV6Implementation implements IImplementation {
 
         for (const isbn of isbns) {
             const result = new SearchResult(service.name, service.code, isbn);
-            results.push(result);
 
             let bookQuery = `number_index:${isbn}`;
             if (service.arenaV6.organisationId) 
@@ -115,6 +114,8 @@ export class ArenaV6Implementation implements IImplementation {
                   result.availability.push(new Availability(libName, av, nav));
               });
             }
+
+            results.push(result);
         }
 
         return _.uniq(results, x => x.id);
