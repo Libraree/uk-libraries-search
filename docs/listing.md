@@ -46,7 +46,7 @@ The following UK library services are supported by this package:
 |E06000052|[Cornwall](https://prism.librarymanagementcloud.co.uk/cornwall/)|Prism|
 |E08000026|[Coventry](https://librarycatalogue.coventry.gov.uk/)|ArenaV7|
 |E09000008|[Croydon](https://llc.ent.sirsidynix.net.uk/client/en_GB/croydon/)|Enterprise|
-|E10000006|[Cumbria](https://cumbria-libraries.org.uk/)|KohaV20|
+|E10000006|[Cumbria](https://cwflibraries.org.uk/)|KohaV20|
 |E06000005|[Darlington](https://www2.darlington.gov.uk/web/arena/)|ArenaV7|
 |E06000015|[Derby City](https://emlib.ent.sirsidynix.net.uk/client/en_GB/derby/)|Enterprise|
 |E10000007|[Derbyshire](https://emlib.ent.sirsidynix.net.uk/client/en_GB/derbyshire/)|Enterprise|
@@ -214,4 +214,4 @@ The following UK library services are supported by this package:
 |E06000014|[York City](https://cyc.sdp.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 
 
-*Last Updated: 2024-04-20T19:26:07.746Z*
+*Last Updated: 2024-04-26T21:13:34.991Z*
