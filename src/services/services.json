@@ -1969,14 +1969,10 @@
 	{
 		"name": "Waltham Forest",
 		"code": "E09000031",
-		"catalogueUrl": "https://llc.ent.sirsidynix.net.uk/client/en_GB/walthamforest/",
-		"enterprise": {
-			"url": "https://llc.ent.sirsidynix.net.uk/client/en_GB/walthamforest/",
-			"libraryNameFilter": "Waltham Forest",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"Available"
-			]
+		"catalogueUrl": "https://libraries.walthamforest.gov.uk/",
+		"luci": {
+			"url": "https://libraries.walthamforest.gov.uk/",
+			"home": "bookshelf"
 		}
 	},
 	{
