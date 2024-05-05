@@ -193,7 +193,7 @@ The following UK library services are supported by this package:
 |E08000009|[Trafford](https://trafford.spydus.co.uk/)|Spydus|
 |E08000036|[Wakefield](https://wakefield.ent.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 |E08000030|[Walsall](https://prism.librarymanagementcloud.co.uk/walsall/)|Prism|
-|E09000031|[Waltham Forest](https://llc.ent.sirsidynix.net.uk/client/en_GB/walthamforest/)|Enterprise|
+|E09000031|[Waltham Forest](https://libraries.walthamforest.gov.uk/)|Luci|
 |E09000032|[Wandsworth](https://prism.librarymanagementcloud.co.uk/wandsworth/)|Prism|
 |E06000007|[Warrington](https://libonline.livewirewarrington.co.uk/)|KohaV20|
 |E10000031|[Warwickshire](https://library.warwickshire.gov.uk/)|Iguana|
@@ -214,4 +214,4 @@ The following UK library services are supported by this package:
 |E06000014|[York City](https://cyc.sdp.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 
 
-*Last Updated: 2024-04-26T21:13:34.991Z*
+*Last Updated: 2024-05-05T16:35:06.448Z*
