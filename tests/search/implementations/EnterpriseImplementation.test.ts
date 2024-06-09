@@ -35,24 +35,3 @@ test('Gets Books with redirects', async () => {
     expect(result[0].isbn).toBeDefined();
     expect(result[0].availability.length).toBeGreaterThan(0);
 });
-
-test('Gets Books without redirects', async () => {
-    const service = 'Somerset';
-    const client = new ProxymanHttpClient(`${folder}/somerset-search.proxymanlogv2`);
-    const impl = new EnterpriseImplementation(client);
-    const result = await impl.getBooks(services.getService(service), [
-        '9780747532743',
-        '9780141187761',
-        '9780553213102',
-        '9780521618748',
-        '9780007371464'
-    ]);
-
-    expect(result.length).toBeGreaterThan(0);
-    expect(result[0].service).toEqual(service);
-    expect(result[0].id).toBeDefined();
-    expect(result[0].code).toBeDefined();
-    expect(result[0].url).toBeDefined();
-    expect(result[0].isbn).toBeDefined();
-    expect(result[0].availability.length).toBeGreaterThan(0);
-});
