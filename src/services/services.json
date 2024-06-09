@@ -82,13 +82,14 @@
 	{
 		"name": "Bath and North East Somerset",
 		"code": "E06000022",
-		"catalogueUrl": "https://www.librarieswest.org.uk/client/en_GB/default/",
-		"enterprise": {
-			"url": "https://www.librarieswest.org.uk/client/en_GB/default/",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"In stock"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "Bath & North East Somerset",
+			"organisationId": "AUKLIBSWEST|1",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{
@@ -163,12 +164,14 @@
 	{
 		"name": "Bournemouth",
 		"code": "E06000028",
-		"catalogueUrl": "https://prism.librarymanagementcloud.co.uk/bournemouth/",
-		"prism": {
-			"url": "https://prism.librarymanagementcloud.co.uk/bournemouth/",
-			"available": [
-				"Available"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "Bournemouth, Christchurch & Poole",
+			"organisationId": "AUKLIBSWEST|2",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{
@@ -230,13 +233,14 @@
 	{
 		"name": "Bristol City",
 		"code": "E06000023",
-		"catalogueUrl": "https://www.librarieswest.org.uk/client/en_GB/default/",
-		"enterprise": {
-			"url": "https://www.librarieswest.org.uk/client/en_GB/default/",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"In stock"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "Bristol",
+			"organisationId": "AUKLIBSWEST|3",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{
@@ -520,13 +524,14 @@
 	{
 		"name": "Dorset",
 		"code": "E10000009",
-		"catalogueUrl": "https://www.librarieswest.org.uk/client/en_GB/default/",
-		"enterprise": {
-			"url": "https://www.librarieswest.org.uk/client/en_GB/default/",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"In stock"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "Dorset",
+			"organisationId": "AUKLIBSWEST|4",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{
@@ -624,8 +629,8 @@
 			"url": "https://library.eastriding.gov.uk/web/arena/",
 			"organisationId": "AUK000205|1",
 			"arenaName": "AUK000205",
-			"advancedUrl": "advanced-search",
-			"signupUrl": "https://library.eastriding.gov.uk/web/arena/self-registration"
+			"advancedUrl": "extended-search",
+			"signupUrl": "https://library.eastriding.gov.uk/protected/join-the-library"
 		}
 	},
 	{
@@ -1293,13 +1298,14 @@
 	{
 		"name": "North Somerset",
 		"code": "E06000024",
-		"catalogueUrl": "https://www.librarieswest.org.uk/client/en_GB/default/",
-		"enterprise": {
-			"url": "https://www.librarieswest.org.uk/client/en_GB/default/",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"In stock"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "North Somerset",
+			"organisationId": "AUKLIBSWEST|5",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{
@@ -1391,12 +1397,9 @@
 	{
 		"name": "Orkney Islands",
 		"code": "S12000023",
-		"catalogueUrl": "https://prism.librarymanagementcloud.co.uk/orkney/",
-		"prism": {
-			"url": "https://prism.librarymanagementcloud.co.uk/orkney/",
-			"available": [
-				"Available"
-			]
+		"catalogueUrl": "https://orkney.spydus.co.uk/",
+		"spydus": {
+			"url": "https://orkney.spydus.co.uk/"
 		}
 	},
 	{
@@ -1449,13 +1452,14 @@
 	{
 		"name": "Poole",
 		"code": "E06000029",
-		"catalogueUrl": "https://www.librarieswest.org.uk/client/en_GB/default/",
-		"enterprise": {
-			"url": "https://www.librarieswest.org.uk/client/en_GB/default/",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"In stock"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "Bournemouth, Christchurch & Poole",
+			"organisationId": "AUKLIBSWEST|2",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{
@@ -1657,13 +1661,14 @@
 	{
 		"name": "Somerset",
 		"code": "E10000027",
-		"catalogueUrl": "https://www.librarieswest.org.uk/client/en_GB/default/",
-		"enterprise": {
-			"url": "https://www.librarieswest.org.uk/client/en_GB/default/",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"In stock"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "Somerset",
+			"organisationId": "AUKLIBSWEST|6",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{
@@ -1677,13 +1682,14 @@
 	{
 		"name": "South Gloucestershire",
 		"code": "E06000025",
-		"catalogueUrl": "https://www.librarieswest.org.uk/client/en_GB/default/",
-		"enterprise": {
-			"url": "https://www.librarieswest.org.uk/client/en_GB/default/",
-			"availabilityUrl": "search/detailnonmodal.detail.detailavailabilityaccordions:lookuptitleinfo/ent:[ITEMID]/ILS/0/true/true",
-			"available": [
-				"In stock"
-			]
+		"catalogueUrl": "https://www.librarieswest.org.uk/",
+		"arenaV7": {
+			"url": "https://www.librarieswest.org.uk/",
+			"isbnAlias": "number",
+			"organisationName": "South Gloucestershire",
+			"organisationId": "AUKLIBSWEST|7",
+			"arenaName": "AUKLIBSWEST",
+			"advancedUrl": "extended-search"
 		}
 	},
 	{

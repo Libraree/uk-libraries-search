@@ -184,7 +184,8 @@ Unit tests use [Proxyman](https://proxyman.io) log files to simulate HTTP traffi
 | Service           | Type      | Problem                                                      | Identified |
 | ----------------- | --------- | ------------------------------------------------------------ | ---------- |
 | Bexley            | `arenaV7` | LFR_SESSION_STATE cookie - JS-generated.                     | 23/08/2023 |
-| Various, evolving | `arenaV7` | Catalogues are undergoing reconfiguration and upgrades leading to the failure of searches. This problem is outside of this package's control. | 23/08/2023 |
+| Halton            | `arenaV7` | Cloudflare prevents access (not a human).                    | 23/08/2023 |
+| Telford & Wrekin  | `arenaV7` | Ability to search by ISBN has been removed.                  | 23/08/2023 |
 
 ## Acknowledgements
 

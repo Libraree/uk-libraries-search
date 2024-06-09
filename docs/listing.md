@@ -12,7 +12,7 @@ The following UK library services are supported by this package:
 |E09000002|[Barking and Dagenham](https://llc.ent.sirsidynix.net.uk/client/en_GB/barking-and-dagenham/)|Enterprise|
 |E09000003|[Barnet](https://prism.librarymanagementcloud.co.uk/barnet/)|Prism|
 |E08000016|[Barnsley](https://barns.ent.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
-|E06000022|[Bath and North East Somerset](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
+|E06000022|[Bath and North East Somerset](https://www.librarieswest.org.uk/)|ArenaV7|
 |E06000055|[Bedford](https://beds-arena.culturalservices.net/web/arena/)|ArenaV7|
 |E09000004|[Bexley](https://arena.yourlondonlibrary.net/web/bexley/)|ArenaV7|
 |E08000025|[Birmingham](https://birmingham.spydus.co.uk/)|Spydus|
@@ -20,12 +20,12 @@ The following UK library services are supported by this package:
 |E06000009|[Blackpool](https://blackpool.spydus.co.uk/)|Spydus|
 |W06000019|[Blaenau Gwent](https://wales.ent.sirsidynix.net.uk/client/en_GB/bgwent_en/)|Enterprise|
 |E08000001|[Bolton](https://bolton.spydus.co.uk/)|Spydus|
-|E06000028|[Bournemouth](https://prism.librarymanagementcloud.co.uk/bournemouth/)|Prism|
+|E06000028|[Bournemouth](https://www.librarieswest.org.uk/)|ArenaV7|
 |E06000036|[Bracknell Forest](https://prism.librarymanagementcloud.co.uk/bracknellforest/)|Prism|
 |E08000032|[Bradford](https://bradford.ent.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 |E09000005|[Brent](https://llc.ent.sirsidynix.net.uk/client/en_GB/brent/)|Enterprise|
 |E06000043|[Brighton and Hove](https://brighton-hove.spydus.co.uk/)|Spydus|
-|E06000023|[Bristol City](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
+|E06000023|[Bristol City](https://www.librarieswest.org.uk/)|ArenaV7|
 |W06000014|[Bro Morgannwg - the Vale of Glamorgan](https://wales.ent.sirsidynix.net.uk/client/en_GB/vog_en/)|Enterprise|
 |E09000006|[Bromley](https://prism.librarymanagementcloud.co.uk/bromley/)|Prism|
 |E10000002|[Buckinghamshire](https://buckinghamshire.spydus.co.uk/)|Spydus|
@@ -52,7 +52,7 @@ The following UK library services are supported by this package:
 |E10000007|[Derbyshire](https://emlib.ent.sirsidynix.net.uk/client/en_GB/derbyshire/)|Enterprise|
 |E10000008|[Devon](https://www.devonlibraries.org.uk/web/arena/)|ArenaV7|
 |E08000017|[Doncaster](https://library.doncaster.gov.uk/web/arena/)|ArenaV7|
-|E10000009|[Dorset](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
+|E10000009|[Dorset](https://www.librarieswest.org.uk/)|ArenaV7|
 |E08000027|[Dudley](https://prism.librarymanagementcloud.co.uk/dudley/)|Prism|
 |S12000006|[Dumfries and Galloway](https://dumgal.inforlib.uk/)|Iguana|
 |S12000042|[Dundee City](https://dundee.spydus.co.uk/)|Spydus|
@@ -122,7 +122,7 @@ The following UK library services are supported by this package:
 |E06000012|[North East Lincolnshire](https://www.lincsinspirelibraries.com/web/arena/)|ArenaV7|
 |S12000044|[North Lanarkshire](https://librariesnl.spydus.co.uk/)|Spydus|
 |E06000013|[North Lincolnshire](https://www.opac.northlincs.gov.uk/web/arena/)|ArenaV7|
-|E06000024|[North Somerset](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
+|E06000024|[North Somerset](https://www.librarieswest.org.uk/)|ArenaV7|
 |E08000022|[North Tyneside](https://prism.librarymanagementcloud.co.uk/northtyneside/)|Prism|
 |E10000023|[North Yorkshire](https://prism.librarymanagementcloud.co.uk/northyorkshire/)|Prism|
 |E10000021|[Northamptonshire](https://www.librarycatalogue.northamptonshire.gov.uk/web/arena/)|ArenaV7|
@@ -131,13 +131,13 @@ The following UK library services are supported by this package:
 |E06000018|[Nottingham City](https://emlib.ent.sirsidynix.net.uk/client/en_GB/nottcity/)|Enterprise|
 |E10000024|[Nottinghamshire](https://emlib.ent.sirsidynix.net.uk/client/en_GB/nelib/)|Enterprise|
 |E08000004|[Oldham](https://oldham.spydus.co.uk/)|Spydus|
-|S12000023|[Orkney Islands](https://prism.librarymanagementcloud.co.uk/orkney/)|Prism|
+|S12000023|[Orkney Islands](https://orkney.spydus.co.uk/)|Spydus|
 |E10000025|[Oxfordshire](https://libcat.oxfordshire.gov.uk/web/arena/)|ArenaV7|
 |W06000013|[Pen-y-bont ar Ogwr - Bridgend](https://wales.ent.sirsidynix.net.uk/client/en_GB/awen_en/)|Enterprise|
 |S12000024|[Perth and Kinross](https://pkc.spydus.co.uk/)|Spydus|
 |E06000031|[Peterborough](https://peterborough.spydus.co.uk/)|Spydus|
 |E06000026|[Plymouth](https://library.plymouth.gov.uk/web/arena/)|ArenaV7|
-|E06000029|[Poole](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
+|E06000029|[Poole](https://www.librarieswest.org.uk/)|ArenaV7|
 |E06000044|[Portsmouth](https://portsmouth.spydus.co.uk/)|Spydus|
 |W06000023|[Powys](https://wales.ent.sirsidynix.net.uk/client/en_GB/powys_en/)|Enterprise|
 |E06000038|[Reading](https://library.reading.gov.uk/)|Spydus|
@@ -165,9 +165,9 @@ The following UK library services are supported by this package:
 |W06000005|[Sir y Fflint - Flintshire](https://wales.ent.sirsidynix.net.uk/client/en_GB/flintshire_en/)|Enterprise|
 |E06000039|[Slough](https://slough.spydus.co.uk/)|Spydus|
 |E08000029|[Solihull](https://solihull.spydus.co.uk/)|Spydus|
-|E10000027|[Somerset](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
+|E10000027|[Somerset](https://www.librarieswest.org.uk/)|ArenaV7|
 |S12000028|[South Ayrshire](https://sayrc.eu.iiivega.com/)|Vega|
-|E06000025|[South Gloucestershire](https://www.librarieswest.org.uk/client/en_GB/default/)|Enterprise|
+|E06000025|[South Gloucestershire](https://www.librarieswest.org.uk/)|ArenaV7|
 |S12000029|[South Lanarkshire](https://www.sllclibrary.co.uk/)|Spydus|
 |E08000023|[South Tyneside](https://prism.librarymanagementcloud.co.uk/southtyneside/)|Prism|
 |E06000045|[Southampton](https://southampton.spydus.co.uk/)|Spydus|
@@ -214,4 +214,4 @@ The following UK library services are supported by this package:
 |E06000014|[York City](https://cyc.sdp.sirsidynix.net.uk/client/en_GB/default/)|Enterprise|
 
 
-*Last Updated: 2024-05-05T16:35:06.448Z*
+*Last Updated: 2024-06-09T13:23:45.138Z*

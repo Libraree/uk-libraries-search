@@ -68,7 +68,9 @@ export class ArenaV7Implementation implements IImplementation {
           $('.arena-extended-search-branch-choice option').each(function () {
             if (isLibrary($(this).text())) result.branches.push($(this).text());
           });
-          return result;
+
+          if (result.branches.length > 0)
+            return result;
         }
       
         // If not we'll need to call a portlet to get the data
