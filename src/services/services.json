@@ -548,9 +548,9 @@
 	{
 		"name": "Dumfries and Galloway",
 		"code": "S12000006",
-		"catalogueUrl": "https://dumgal.inforlib.uk/",
+		"catalogueUrl": "https://dag.vsmarthosting.net/",
 		"iguana": {
-			"url": "https://dumgal.inforlib.uk/iguana/",
+			"url": "https://dag.vsmarthosting.net/iguana/",
 			"database": "1_STOCK"
 		}
 	},
