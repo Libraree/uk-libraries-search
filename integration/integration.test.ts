@@ -23,14 +23,16 @@ book, for example.
 //process.env.LUCI_PROXY = 'http://127.0.0.1:3128';
 
 const librariesIgnoreList = [
-    'Halton' // Cloudflare
+    'Halton', // Cloudflare
+    'Durham' // always fails on GitHub but works locally
 ];
 
 const booksIgnoreList = [
     'Bexley', // LFR_SESSION_STATE cookie - JS-generated
     'Oxfordshire', // always fails on GitHub but works locally.,
     'Telford and Wrekin', // ability to search by ISBN removed.
-    'Halton' // Cloudflare
+    'Halton', // Cloudflare
+    'Durham' // always fails on GitHub but works locally
 ];
 
 const allTypes: string[] = [
